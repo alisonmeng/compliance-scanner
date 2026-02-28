@@ -1,0 +1,82 @@
+[
+  {
+    "rule_id": "GDPR_ART_5_MINIMIZATION",
+    "regulation": "GDPR",
+    "topic": "Data Minimization and Retention",
+    "risk_level": "High",
+    "semantic_description": "Statements about how long data is kept, indefinite storage, keeping information 'forever', or collecting excessive information that isn't needed for the core service. Mentions of storing data just in case it's needed later.",
+    "comprehensive_clause": "GDPR Article 5(1)(c) & (e): Personal data shall be adequate, relevant and limited to what is necessary in relation to the purposes for which they are processed (data minimisation); kept in a form which permits identification of data subjects for no longer than is necessary for the purposes for which the personal data are processed (storage limitation)."
+  },
+  {
+    "rule_id": "GDPR_ART_6_CONSENT",
+    "regulation": "GDPR",
+    "topic": "Lawful Basis & Forced Consent",
+    "risk_level": "Critical",
+    "semantic_description": "Clauses claiming that merely using the website means the user consents to all data processing. Pre-ticked boxes, forced agreement to targeted advertising to use the service, or relying on 'legitimate interest' to bypass user consent.",
+    "comprehensive_clause": "GDPR Article 6 & 7: Processing is only lawful if the data subject has given consent to the processing of his or her personal data for one or more specific purposes. Consent must be freely given, specific, informed and unambiguous. Silence, pre-ticked boxes or inactivity should not constitute consent."
+  },
+  {
+    "rule_id": "GDPR_ART_17_ERASURE",
+    "regulation": "GDPR",
+    "topic": "Right to Erasure (Right to be Forgotten)",
+    "risk_level": "High",
+    "semantic_description": "Rules regarding the deletion, removal, or anonymization of user data. Covers user requests to erase their account, wipe their history, or scenarios where the company refuses to delete data after the user leaves.",
+    "comprehensive_clause": "GDPR Article 17: The data subject shall have the right to obtain from the controller the erasure of personal data concerning him or her without undue delay. The controller has the obligation to erase personal data when it is no longer necessary, or when the data subject withdraws consent."
+  },
+  {
+    "rule_id": "GDPR_ART_46_TRANSFERS",
+    "regulation": "GDPR",
+    "topic": "International Data Transfers (US/China)",
+    "risk_level": "Critical",
+    "semantic_description": "Mentions of servers located in the United States, China, or other non-EU countries. Clauses stating data may be transferred globally, cross-border, or processed internationally without mentioning Standard Contractual Clauses (SCCs).",
+    "comprehensive_clause": "GDPR Article 46 & Schrems II: Transfers of personal data to a third country (e.g., the US) may take place only if the controller has provided appropriate safeguards, such as Standard Contractual Clauses (SCCs), and on condition that enforceable data subject rights and effective legal remedies for data subjects are available."
+  },
+  {
+    "rule_id": "NFADP_ART_5_PROFILING",
+    "regulation": "Swiss nFADP",
+    "topic": "High-Risk Profiling",
+    "risk_level": "Critical",
+    "semantic_description": "Using algorithms or automated systems to evaluate personal aspects, track behavior, analyze credit scores, predict health, or evaluate work performance. Any combination of data to build a deep personality profile.",
+    "comprehensive_clause": "Swiss nFADP Article 5(f) & (g): High-risk profiling is profiling that poses a high risk to the data subject's personality or fundamental rights by matching data that allows an assessment of essential aspects of their personality. This strictly requires explicit, opt-in consent from the user."
+  },
+  {
+    "rule_id": "NFADP_ART_16_EXPORTS",
+    "regulation": "Swiss nFADP",
+    "topic": "Cross-Border Data Disclosure",
+    "risk_level": "High",
+    "semantic_description": "Sharing, selling, or disclosing user information to third parties, partners, or affiliates located outside of Switzerland. Moving data to foreign data centers.",
+    "comprehensive_clause": "Swiss nFADP Article 16: Personal data may be disclosed abroad only if the Federal Council has decided that the legislation of the State concerned guarantees an adequate level of protection, or if appropriate safeguards (like an international treaty or standard data protection clauses) are guaranteed."
+  },
+  {
+    "rule_id": "EU_AI_ACT_ART_10_DATA",
+    "regulation": "EU AI Act",
+    "topic": "AI Training Data Governance",
+    "risk_level": "Critical",
+    "semantic_description": "Using user content, text, images, or personal data to train, improve, or develop artificial intelligence, machine learning models, algorithms, or generative AI. Claims of scraping user data for AI development.",
+    "comprehensive_clause": "EU AI Act Article 10: Training, validation, and testing data sets for high-risk AI systems shall be subject to strict data governance. This includes examining data for possible biases and ensuring data sets are relevant, representative, and collected with an appropriate legal basis (explicit consent if using personal data)."
+  },
+  {
+    "rule_id": "EU_AI_ACT_TRANSPARENCY",
+    "regulation": "EU AI Act",
+    "topic": "AI Interaction Transparency",
+    "risk_level": "Medium",
+    "semantic_description": "Interacting with chatbots, virtual assistants, deepfakes, or automated customer service. Generating synthetic content, images, or audio.",
+    "comprehensive_clause": "EU AI Act Transparency Obligations: Providers must ensure that AI systems intended to interact with natural persons are designed and developed in such a way that natural persons are informed that they are interacting with an AI system, unless this is obvious from the circumstances."
+  },
+  {
+    "rule_id": "EPRIVACY_COOKIES",
+    "regulation": "ePrivacy Directive",
+    "topic": "Cookies and Device Tracking",
+    "risk_level": "High",
+    "semantic_description": "Placing trackers, cookies, pixels, or beacons on a user's device or browser. Tracking users across different websites for targeted advertising, analytics, or behavioral marketing.",
+    "comprehensive_clause": "ePrivacy Directive Article 5(3): The storing of information, or the gaining of access to information already stored, in the terminal equipment of a subscriber or user is only allowed on condition that the subscriber or user concerned has given his or her consent, having been provided with clear and comprehensive information."
+  },
+  {
+    "rule_id": "GDPR_ART_9_SENSITIVE",
+    "regulation": "GDPR & nFADP",
+    "topic": "Processing of Sensitive Data",
+    "risk_level": "Critical",
+    "semantic_description": "Collecting health records, medical information, biometric data (face scans, fingerprints), political opinions, religious beliefs, race, ethnicity, or sexual orientation.",
+    "comprehensive_clause": "GDPR Article 9 / nFADP: Processing of personal data revealing racial or ethnic origin, political opinions, religious beliefs, genetic data, or biometric data for the purpose of uniquely identifying a natural person, data concerning health or a natural person's sex life shall be prohibited unless explicit consent is given."
+  }
+]

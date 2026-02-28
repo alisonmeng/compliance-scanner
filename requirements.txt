@@ -1,0 +1,14 @@
+# Web
+streamlit>=1.32.0
+
+# LLM
+langchain>=0.1.13
+langchain-chroma
+langchain-google-genai>=1.0.1
+
+# Vector DB
+chromadb>=0.4.24
+
+# Utilities
+python-dotenv>=1.0.1
+pydantic>=2.6.4
