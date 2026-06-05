@@ -1,82 +1,232 @@
 [
   {
-    "rule_id": "GDPR_ART_5_MINIMIZATION",
-    "regulation": "GDPR",
-    "topic": "Data Minimization and Retention",
+    "rule_id": "GDPR_ART05_MINIMIZE",
+    "regulation": "GDPR (General Data Protection Regulation)",
+    "topic": "Data Minimization & Retention",
     "risk_level": "High",
-    "semantic_description": "Statements about how long data is kept, indefinite storage, keeping information 'forever', or collecting excessive information that isn't needed for the core service. Mentions of storing data just in case it's needed later.",
-    "comprehensive_clause": "GDPR Article 5(1)(c) & (e): Personal data shall be adequate, relevant and limited to what is necessary in relation to the purposes for which they are processed (data minimisation); kept in a form which permits identification of data subjects for no longer than is necessary for the purposes for which the personal data are processed (storage limitation)."
+    "source_url": "https://gdpr-info.eu/art-5-gdpr/",
+    "semantic_description": "Clauses claiming the company can keep data forever, retain information indefinitely, keep information 'for our records' after account closure, or collect data that is clearly unnecessary for the core service. Synonyms: perpetual storage, irrevocable right to retain, data hoarded.",
+    "comprehensive_clause": "GDPR Article 5(1)(c) & (e): Personal data shall be adequate, relevant and limited to what is necessary in relation to the purposes for which they are processed; kept in a form which permits identification of data subjects for no longer than is necessary.",
+    "exceptions": "The vendor is legally allowed to retain data beyond account closure ONLY IF it is strictly necessary for compliance with a legal obligation (like tax, accounting, or anti-money laundering laws), or for the establishment, exercise, or defence of legal claims."
   },
   {
-    "rule_id": "GDPR_ART_6_CONSENT",
+    "rule_id": "GDPR_ART06_CONSENT",
     "regulation": "GDPR",
-    "topic": "Lawful Basis & Forced Consent",
+    "topic": "Forced Consent & Lawful Basis",
     "risk_level": "Critical",
-    "semantic_description": "Clauses claiming that merely using the website means the user consents to all data processing. Pre-ticked boxes, forced agreement to targeted advertising to use the service, or relying on 'legitimate interest' to bypass user consent.",
-    "comprehensive_clause": "GDPR Article 6 & 7: Processing is only lawful if the data subject has given consent to the processing of his or her personal data for one or more specific purposes. Consent must be freely given, specific, informed and unambiguous. Silence, pre-ticked boxes or inactivity should not constitute consent."
+    "source_url": "https://gdpr-info.eu/art-6-gdpr/",
+    "semantic_description": "Clauses stating that simply browsing the site, continuing to use the app, or not opting out constitutes consent to data processing. Mentions of pre-ticked boxes, bundled consent, or forcing users to accept targeted ads to use a basic service.",
+    "comprehensive_clause": "GDPR Article 6 & 7: Consent must be freely given, specific, informed, and unambiguous. Silence, pre-ticked boxes, or inactivity does not constitute consent. The performance of a contract cannot be made conditional on the consent to process personal data that is not necessary for the performance of that contract.",
+    "exceptions": "No consent is required if the data processing is strictly necessary for the core performance of the contract (e.g., needing a shipping address to deliver a physical package)."
   },
   {
-    "rule_id": "GDPR_ART_17_ERASURE",
+    "rule_id": "GDPR_ART17_ERASURE",
     "regulation": "GDPR",
-    "topic": "Right to Erasure (Right to be Forgotten)",
+    "topic": "Right to Erasure (Be Forgotten)",
     "risk_level": "High",
-    "semantic_description": "Rules regarding the deletion, removal, or anonymization of user data. Covers user requests to erase their account, wipe their history, or scenarios where the company refuses to delete data after the user leaves.",
-    "comprehensive_clause": "GDPR Article 17: The data subject shall have the right to obtain from the controller the erasure of personal data concerning him or her without undue delay. The controller has the obligation to erase personal data when it is no longer necessary, or when the data subject withdraws consent."
+    "source_url": "https://gdpr-info.eu/art-17-gdpr/",
+    "semantic_description": "Clauses refusing to delete accounts, stating backups cannot be erased, or claiming an 'irrevocable, perpetual, royalty-free license' to user-generated content containing personal data even after the user leaves.",
+    "comprehensive_clause": "GDPR Article 17: The data subject shall have the right to obtain the erasure of personal data concerning him or her without undue delay when the data is no longer necessary, or consent is withdrawn.",
+    "exceptions": "Erasure can be refused if the processing is necessary for exercising the right of freedom of expression, public interest/health, or for compliance with a legal obligation or defending legal claims."
   },
   {
-    "rule_id": "GDPR_ART_46_TRANSFERS",
+    "rule_id": "GDPR_ART46_TRANSFER",
     "regulation": "GDPR",
-    "topic": "International Data Transfers (US/China)",
+    "topic": "International Data Transfers",
     "risk_level": "Critical",
-    "semantic_description": "Mentions of servers located in the United States, China, or other non-EU countries. Clauses stating data may be transferred globally, cross-border, or processed internationally without mentioning Standard Contractual Clauses (SCCs).",
-    "comprehensive_clause": "GDPR Article 46 & Schrems II: Transfers of personal data to a third country (e.g., the US) may take place only if the controller has provided appropriate safeguards, such as Standard Contractual Clauses (SCCs), and on condition that enforceable data subject rights and effective legal remedies for data subjects are available."
+    "source_url": "https://gdpr-info.eu/art-46-gdpr/",
+    "semantic_description": "Statements that data may be transferred globally, routed through the United States, China, or other non-EU countries. Mentions of global affiliates, worldwide servers, or international data processing without specifying safeguards.",
+    "comprehensive_clause": "GDPR Article 46: Transfers of personal data to a third country may take place only if the controller has provided appropriate safeguards, such as Standard Contractual Clauses (SCCs), and enforceable data subject rights are available.",
+    "exceptions": "Data can be transferred if the destination country has an 'Adequacy Decision' from the EU Commission, or if the user has provided explicit, informed consent to the specific risks of the transfer."
   },
   {
-    "rule_id": "NFADP_ART_5_PROFILING",
+    "rule_id": "GDPR_ART09_SENSITIVE",
+    "regulation": "GDPR & nFADP",
+    "topic": "Processing Sensitive Data",
+    "risk_level": "Critical",
+    "source_url": "https://gdpr-info.eu/art-9-gdpr/",
+    "semantic_description": "Collecting health records, fitness tracker data, medical info, biometric data (face scans, fingerprints, voiceprints), political opinions, religious beliefs, race, ethnicity, or sexual orientation.",
+    "comprehensive_clause": "GDPR Article 9: Processing of personal data revealing racial or ethnic origin, political opinions, religious beliefs, or biometric data for the purpose of uniquely identifying a natural person, or data concerning health shall be prohibited.",
+    "exceptions": "Processing sensitive data is allowed ONLY IF the user has given explicit, opt-in consent, or if it is necessary to protect the vital interests (life or death) of the data subject."
+  },
+  {
+    "rule_id": "NFADP_ART19_PROFILE",
     "regulation": "Swiss nFADP",
     "topic": "High-Risk Profiling",
     "risk_level": "Critical",
-    "semantic_description": "Using algorithms or automated systems to evaluate personal aspects, track behavior, analyze credit scores, predict health, or evaluate work performance. Any combination of data to build a deep personality profile.",
-    "comprehensive_clause": "Swiss nFADP Article 5(f) & (g): High-risk profiling is profiling that poses a high risk to the data subject's personality or fundamental rights by matching data that allows an assessment of essential aspects of their personality. This strictly requires explicit, opt-in consent from the user."
+    "source_url": "https://www.fedlex.admin.ch/eli/cc/2022/491/en",
+    "semantic_description": "Using algorithms or automated systems to evaluate personal aspects, track behavior, analyze credit scores, predict health, monitor work performance, or combine datasets to build deep personality profiles.",
+    "comprehensive_clause": "Swiss nFADP Article 5 & 19: High-risk profiling is profiling that poses a high risk to the data subject's personality or fundamental rights by matching data. This strictly requires explicit consent.",
+    "exceptions": "Basic profiling (non-high-risk) is allowed if it is strictly necessary for the conclusion or performance of a contract (e.g., a basic credit check for a loan application)."
   },
   {
-    "rule_id": "NFADP_ART_16_EXPORTS",
+    "rule_id": "NFADP_ART16_EXPORT",
     "regulation": "Swiss nFADP",
     "topic": "Cross-Border Data Disclosure",
     "risk_level": "High",
+    "source_url": "https://www.fedlex.admin.ch/eli/cc/2022/491/en",
     "semantic_description": "Sharing, selling, or disclosing user information to third parties, partners, or affiliates located outside of Switzerland. Moving data to foreign data centers.",
-    "comprehensive_clause": "Swiss nFADP Article 16: Personal data may be disclosed abroad only if the Federal Council has decided that the legislation of the State concerned guarantees an adequate level of protection, or if appropriate safeguards (like an international treaty or standard data protection clauses) are guaranteed."
+    "comprehensive_clause": "Swiss nFADP Article 16: Personal data may be disclosed abroad only if the Federal Council has decided that the legislation of the State concerned guarantees an adequate level of protection, or if appropriate safeguards are guaranteed.",
+    "exceptions": "Disclosure abroad is permitted without safeguards ONLY IF the data subject has expressly consented to the specific disclosure, or it is directly connected to concluding a contract with the data subject."
   },
   {
-    "rule_id": "EU_AI_ACT_ART_10_DATA",
+    "rule_id": "EUAI_ART10_TRAIN",
     "regulation": "EU AI Act",
     "topic": "AI Training Data Governance",
     "risk_level": "Critical",
-    "semantic_description": "Using user content, text, images, or personal data to train, improve, or develop artificial intelligence, machine learning models, algorithms, or generative AI. Claims of scraping user data for AI development.",
-    "comprehensive_clause": "EU AI Act Article 10: Training, validation, and testing data sets for high-risk AI systems shall be subject to strict data governance. This includes examining data for possible biases and ensuring data sets are relevant, representative, and collected with an appropriate legal basis (explicit consent if using personal data)."
+    "source_url": "https://artificialintelligenceact.eu/",
+    "semantic_description": "Using user content, text, chat logs, images, or personal data to train, improve, or develop artificial intelligence, machine learning models, algorithms, LLMs, or generative AI. Claims of scraping user data for AI development.",
+    "comprehensive_clause": "EU AI Act & GDPR: Training AI systems using personal data must have a valid legal basis under GDPR. Users must be transparently informed and generally must provide explicit consent. Users must have the right to opt-out of their personal data being used for AI training.",
+    "exceptions": "No exception exists for using identifiable personal data without a legal basis. However, if the data is completely, irreversibly anonymized (not just pseudonymized) before training, GDPR no longer applies."
   },
   {
-    "rule_id": "EU_AI_ACT_TRANSPARENCY",
+    "rule_id": "EUAI_ART50_TRANSPARENCY",
     "regulation": "EU AI Act",
     "topic": "AI Interaction Transparency",
     "risk_level": "Medium",
+    "source_url": "https://artificialintelligenceact.eu/",
     "semantic_description": "Interacting with chatbots, virtual assistants, deepfakes, or automated customer service. Generating synthetic content, images, or audio.",
-    "comprehensive_clause": "EU AI Act Transparency Obligations: Providers must ensure that AI systems intended to interact with natural persons are designed and developed in such a way that natural persons are informed that they are interacting with an AI system, unless this is obvious from the circumstances."
+    "comprehensive_clause": "EU AI Act Article 50 (Transparency Obligations): Providers must ensure that AI systems intended to interact with natural persons are designed and developed in such a way that natural persons are informed that they are interacting with an AI system.",
+    "exceptions": "Transparency warnings are not required IF it is blatantly obvious from the circumstances and the context of use that the user is interacting with an AI (e.g., logging into ChatGPT)."
   },
   {
-    "rule_id": "EPRIVACY_COOKIES",
+    "rule_id": "EPRIV_ART05_COOKIES",
     "regulation": "ePrivacy Directive",
-    "topic": "Cookies and Device Tracking",
+    "topic": "Cookies & Device Tracking",
     "risk_level": "High",
-    "semantic_description": "Placing trackers, cookies, pixels, or beacons on a user's device or browser. Tracking users across different websites for targeted advertising, analytics, or behavioral marketing.",
-    "comprehensive_clause": "ePrivacy Directive Article 5(3): The storing of information, or the gaining of access to information already stored, in the terminal equipment of a subscriber or user is only allowed on condition that the subscriber or user concerned has given his or her consent, having been provided with clear and comprehensive information."
+    "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32002L0058",
+    "semantic_description": "Placing trackers, cookies, pixels, or beacons on a user's device. Tracking users across different websites for targeted advertising, analytics, retargeting, or behavioral marketing.",
+    "comprehensive_clause": "ePrivacy Directive Article 5(3): The storing of information, or the gaining of access to information already stored, in the terminal equipment of a user is only allowed on condition that the user concerned has given explicit, opt-in consent.",
+    "exceptions": "Consent is NOT required for 'Strictly Necessary Cookies'—trackers that are technically essential to provide the service the user requested (e.g., a cookie that remembers items in a shopping cart or a secure login session)."
   },
   {
-    "rule_id": "GDPR_ART_9_SENSITIVE",
-    "regulation": "GDPR & nFADP",
-    "topic": "Processing of Sensitive Data",
+    "rule_id": "GDPR_ART21_OBJECTION",
+    "regulation": "GDPR",
+    "topic": "Right to Object (Direct Marketing)",
+    "risk_level": "High",
+    "source_url": "https://gdpr-info.eu/art-21-gdpr/",
+    "semantic_description": "Clauses stating users cannot opt-out of promotional emails, marketing newsletters, or third-party advertising. Stating that opting out of marketing will terminate the user's account.",
+    "comprehensive_clause": "GDPR Article 21: Where personal data are processed for direct marketing purposes, the data subject shall have the right to object at any time to processing of personal data concerning him or her for such marketing. The data shall no longer be processed for such purposes.",
+    "exceptions": "There are NO EXCEPTIONS to this rule regarding direct marketing. If a user objects to direct marketing, the processing must stop immediately and unconditionally."
+  },
+  {
+    "rule_id": "LIABILITY_WAIVER_PRIVACY",
+    "regulation": "General Consumer Law & GDPR",
+    "topic": "Data Breach Liability Waiver",
     "risk_level": "Critical",
-    "semantic_description": "Collecting health records, medical information, biometric data (face scans, fingerprints), political opinions, religious beliefs, race, ethnicity, or sexual orientation.",
-    "comprehensive_clause": "GDPR Article 9 / nFADP: Processing of personal data revealing racial or ethnic origin, political opinions, religious beliefs, genetic data, or biometric data for the purpose of uniquely identifying a natural person, data concerning health or a natural person's sex life shall be prohibited unless explicit consent is given."
+    "source_url": "https://gdpr-info.eu/art-82-gdpr/",
+    "semantic_description": "Clauses stating the company 'is not liable for data breaches', 'takes no responsibility for hacks', or waives the user's right to sue or join a class action if their personal data is stolen.",
+    "comprehensive_clause": "GDPR Article 82 & Consumer Law: Any person who has suffered material or non-material damage as a result of an infringement of this Regulation shall have the right to receive compensation from the controller or processor for the damage suffered. Blanket liability waivers for data breaches are void.",
+    "exceptions": "A controller may be exempt from liability ONLY IF it proves that it is not in any way responsible for the event giving rise to the damage (e.g., a completely unforeseeable zero-day exploit despite having state-of-the-art security)."
+  },
+  {
+    "rule_id": "GDPR_ART05_PURPOSE",
+    "regulation": "GDPR",
+    "topic": "Purpose Limitation (Scope Creep)",
+    "risk_level": "High",
+    "source_url": "https://gdpr-info.eu/art-5-gdpr/",
+    "semantic_description": "Clauses claiming the company can use collected data for 'any future purpose', 'unspecified future products', or reserving the right to change how data is used without notifying the user. Synonyms: general use, broad consent, future business needs.",
+    "comprehensive_clause": "GDPR Article 5(1)(b): Personal data shall be collected for specified, explicit and legitimate purposes and not further processed in a manner that is incompatible with those purposes.",
+    "exceptions": "Further processing is allowed IF it is strictly for archiving purposes in the public interest, scientific/historical research, or statistical purposes, provided appropriate safeguards are in place."
+  },
+  {
+    "rule_id": "GDPR_ART15_ACCESS",
+    "regulation": "GDPR & nFADP",
+    "topic": "Right of Access & Portability",
+    "risk_level": "High",
+    "source_url": "https://gdpr-info.eu/art-15-gdpr/",
+    "semantic_description": "Clauses stating users cannot request a copy of their data, that data cannot be exported, or charging an administrative 'fee' for the user to download their own profile or history.",
+    "comprehensive_clause": "GDPR Articles 15 & 20: The data subject shall have the right to obtain confirmation as to whether personal data are being processed, access to that data, and the right to receive the data in a structured, commonly used, machine-readable format free of charge.",
+    "exceptions": "A company may charge a 'reasonable fee' or refuse to act ONLY IF the user's requests are manifestly unfounded or excessive (e.g., highly repetitive requests within a short timeframe)."
+  },
+  {
+    "rule_id": "GDPR_ART33_BREACH",
+    "regulation": "GDPR",
+    "topic": "Data Breach Notification",
+    "risk_level": "Critical",
+    "source_url": "https://gdpr-info.eu/art-33-gdpr/",
+    "semantic_description": "Clauses stating the company is not obligated to notify users if a hack, leak, or data breach occurs. Stating users waive their right to be informed of security incidents.",
+    "comprehensive_clause": "GDPR Article 33 & 34: In the case of a personal data breach likely to result in a high risk to the rights and freedoms of natural persons, the controller shall communicate the personal data breach to the data subject without undue delay.",
+    "exceptions": "Notification to the user is not required IF the leaked data was strongly encrypted/unintelligible, or if the company took subsequent measures that ensure the high risk is no longer likely to materialize."
+  },
+  {
+    "rule_id": "GDPR_ART28_VENDOR",
+    "regulation": "GDPR",
+    "topic": "Third-Party Processor Liability",
+    "risk_level": "High",
+    "source_url": "https://gdpr-info.eu/art-28-gdpr/",
+    "semantic_description": "Clauses where the main company claims zero responsibility for what their sub-contractors, server hosts, or third-party vendors do with user data. 'We are not liable for the privacy practices of our partners.'",
+    "comprehensive_clause": "GDPR Article 28 & 82: The primary data controller remains fully liable to the data subject for the performance of the third-party processor's obligations. Controllers must only use processors providing sufficient guarantees to implement appropriate technical and organisational measures.",
+    "exceptions": "A controller may be exempt from liability only if it can prove that it is not in any way responsible for the event giving rise to the damage, which is extremely difficult regarding chosen sub-contractors."
+  },
+  {
+    "rule_id": "GDPR_ART22_AUTOMATED",
+    "regulation": "GDPR",
+    "topic": "Automated Decision-Making",
+    "risk_level": "Critical",
+    "source_url": "https://gdpr-info.eu/art-22-gdpr/",
+    "semantic_description": "Users agreeing to be subject to decisions made entirely by algorithms, bots, or AI without any human review, especially regarding hiring, loans, housing, or legal status.",
+    "comprehensive_clause": "GDPR Article 22: The data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning him or her or similarly significantly affects him or her.",
+    "exceptions": "Automated decision-making is allowed IF it is necessary for entering into a contract, authorized by Union or Member State law, or based on the data subject's explicit consent. However, the right to obtain human intervention must still be guaranteed."
+  },
+  {
+    "rule_id": "GDPR_ART08_CHILD",
+    "regulation": "GDPR",
+    "topic": "Children's Data Consent",
+    "risk_level": "Critical",
+    "source_url": "https://gdpr-info.eu/art-8-gdpr/",
+    "semantic_description": "Clauses allowing the collection of data from minors or children under 16 without requiring verifiable parental consent. Assuming anyone using the site is an adult without checks.",
+    "comprehensive_clause": "GDPR Article 8: Where the child is below the age of 16 years, processing of their personal data shall be lawful only if and to the extent that consent is given or authorised by the holder of parental responsibility over the child.",
+    "exceptions": "Member States may provide by law for a lower age, provided that such lower age is not below 13 years. This does not affect general contract law regarding the validity of contracts formed by children."
+  },
+  {
+    "rule_id": "EUDA_ART04_IOT",
+    "regulation": "EU Data Act",
+    "topic": "IoT Device Data Rights",
+    "risk_level": "High",
+    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/data-act",
+    "semantic_description": "Clauses for smart devices, connected cars, or IoT products where the manufacturer claims ownership of the data generated by the user's physical device, or refuses to let the user share that data with third-party repair services.",
+    "comprehensive_clause": "EU Data Act Article 4: Users of connected products shall have the right to access the data generated by their use of the product without undue delay, free of charge, and the right to share that data with third parties (like independent repairers).",
+    "exceptions": "Manufacturers may protect trade secrets, provided they agree with the user on specific technical and organizational measures to preserve the confidentiality of the shared data."
+  },
+  {
+    "rule_id": "UCTD_ART03_MODIFY",
+    "regulation": "Unfair Contract Terms Directive (UCTD)",
+    "topic": "Unilateral Modification of Terms",
+    "risk_level": "Critical",
+    "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A31993L0013",
+    "semantic_description": "Clauses stating the vendor can update, modify, or change the Terms of Service, Privacy Policy, or pricing at any time without prior notice. Stating that 'continued use constitutes acceptance' of new hidden terms.",
+    "comprehensive_clause": "UCTD 93/13/EEC Annex 1(j): Terms are unfair if they enable the seller or supplier to alter the terms of the contract unilaterally without a valid reason which is specified in the contract, and without giving the consumer the right to dissolve the contract.",
+    "exceptions": "Unilateral changes are allowed ONLY IF the vendor provides reasonable advance notice (e.g., 30 days) AND explicitly gives the user the right to cancel their account/subscription without penalty before the changes take effect."
+  },
+  {
+    "rule_id": "UCTD_ART03_ARBITRATE",
+    "regulation": "UCTD & General EU Law",
+    "topic": "Forced Arbitration & Class Action Waivers",
+    "risk_level": "High",
+    "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A31993L0013",
+    "semantic_description": "Clauses forcing users to resolve disputes via binding arbitration instead of a court of law. Users waiving their right to participate in a class-action lawsuit or trial by jury. Usually found in the 'Dispute Resolution' section.",
+    "comprehensive_clause": "UCTD 93/13/EEC Annex 1(q): Terms are unfair if they exclude or hinder the consumer's right to take legal action or exercise any other legal remedy, particularly by requiring the consumer to take disputes exclusively to arbitration.",
+    "exceptions": "For B2B (Business-to-Business) SaaS contracts, binding arbitration clauses and class action waivers are generally legally permissible. This rule strictly applies to B2C (Business-to-Consumer) users."
+  },
+  {
+    "rule_id": "DSA_ART14_MODERATION",
+    "regulation": "EU Digital Services Act (DSA)",
+    "topic": "Account Termination & Shadowbanning",
+    "risk_level": "High",
+    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/digital-services-act-package",
+    "semantic_description": "Clauses claiming the platform can suspend, terminate, ban, or remove user content 'for any reason, at our sole discretion, without notice'. Claims that the company does not have to explain why an account was banned.",
+    "comprehensive_clause": "DSA Article 14 & 17: Providers of hosting services must act in a diligent, objective and proportionate manner. If they remove content or suspend an account, they must provide the user with a clear, specific 'Statement of Reasons' and offer an internal complaint-handling system.",
+    "exceptions": "Immediate termination without notice is allowed IF the user is engaged in blatantly illegal activities (e.g., terrorism, CSAM) or poses an immediate security threat to the platform."
+  },
+  {
+    "rule_id": "CRD_ART08_CANCEL",
+    "regulation": "EU Consumer Rights Directive (CRD)",
+    "topic": "Subscription Traps & Dark Patterns",
+    "risk_level": "High",
+    "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011L0083",
+    "semantic_description": "Clauses stating that subscriptions cannot be cancelled easily, requiring users to call a phone number to cancel, failing to provide a clear cancellation button, or strictly denying pro-rated refunds for service disruptions.",
+    "comprehensive_clause": "CRD Directive 2011/83/EU & Unfair Commercial Practices: Consumers must be able to cancel a subscription as easily as they signed up for it (e.g., via a clear, direct online button). Obscuring the cancellation process or enforcing predatory lock-ins constitutes an illegal dark pattern.",
+    "exceptions": "Yearly contracts with a commitment period can legally enforce a lock-in for that specific term, provided the exact duration and early termination fees were transparently agreed upon at checkout."
   }
 ]
