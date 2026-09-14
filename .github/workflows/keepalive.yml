@@ -1,0 +1,45 @@
+# Keeps the Streamlit Community Cloud deployment from hibernating.
+#
+# Community Cloud sleeps an app that goes ~12 hours without traffic. A plain
+# HTTP ping cannot prevent this: the app root serves a static SPA shell that
+# answers 200 whether or not the container is running, so the inactivity timer
+# never resets. Only a real browser visit counts, which is why this runs
+# Playwright rather than curl.
+#
+# Inert until the STREAMLIT_APP_URL repository variable is set:
+#   Settings > Secrets and variables > Actions > Variables > New variable
+#   Name: STREAMLIT_APP_URL   Value: https://<your-app>.streamlit.app
+name: Keep app awake
+
+on:
+  schedule:
+    # Every 6 hours, at :23 to stay clear of the on-the-hour scheduling rush.
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: keepalive
+  cancel-in-progress: false
+
+jobs:
+  visit:
+    # Skip rather than fail while the variable is unconfigured.
+    if: vars.STREAMLIT_APP_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Playwright
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Visit the app
+        env:
+          STREAMLIT_APP_URL: ${{ vars.STREAMLIT_APP_URL }}
+        run: python scripts/keepalive.py
