@@ -2,18 +2,15 @@
 streamlit>=1.32.0
 
 # LLM
-langchain>=0.1.13
+langchain-core>=0.1.33
 langchain-google-genai>=1.0.1
 langchain-chroma>=0.1.0
-langchain-community>=0.0.29
 
 # Vector DB
 chromadb>=0.4.24
 
-# Web Search Agent
-duckduckgo-search>=5.0.0
-ddgs>=9.11.3
-
+# Web Search Agent (core/news_agent.py) — currently disabled in the UI.
+# Re-enabling it needs: langchain-community, duckduckgo-search, ddgs
 
 # Utilities
 python-dotenv>=1.0.1
