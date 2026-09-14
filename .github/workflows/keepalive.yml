@@ -6,9 +6,10 @@
 # never resets. Only a real browser visit counts, which is why this runs
 # Playwright rather than curl.
 #
-# Inert until the STREAMLIT_APP_URL repository variable is set:
-#   Settings > Secrets and variables > Actions > Variables > New variable
-#   Name: STREAMLIT_APP_URL   Value: https://<your-app>.streamlit.app
+# Needs STREAMLIT_APP_URL set to https://<your-app>.streamlit.app, under
+# Settings > Secrets and variables > Actions. Either tab works, but prefer
+# Variables: the app URL is public, and a secret is masked as *** in the run
+# log, which makes a failed run harder to read.
 name: Keep app awake
 
 on:
@@ -23,8 +24,6 @@ concurrency:
 
 jobs:
   visit:
-    # Skip rather than fail while the variable is unconfigured.
-    if: vars.STREAMLIT_APP_URL != ''
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -41,5 +40,8 @@ jobs:
 
       - name: Visit the app
         env:
-          STREAMLIT_APP_URL: ${{ vars.STREAMLIT_APP_URL }}
+          # Accept either namespace; the script fails loudly if neither is set.
+          # A job-level guard is not possible here: the secrets context is not
+          # available in an `if:` condition.
+          STREAMLIT_APP_URL: ${{ vars.STREAMLIT_APP_URL || secrets.STREAMLIT_APP_URL }}
         run: python scripts/keepalive.py
