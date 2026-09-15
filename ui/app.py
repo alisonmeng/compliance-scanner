@@ -9,6 +9,8 @@ sys.path.append(BASE_DIR)
 
 from core.meta_tags import inject_meta_tags
 from core.analyser import get_analyser_pipeline, analyse_batch
+# core.analyser pulls in langchain and chromadb, which cost several seconds to
+# import. It is loaded lazily on the first scan so the page can paint immediately.
 # from core.news_agent import check_vendor_history
 
 inject_meta_tags()  # OG/Twitter tags for link previews; must run before the page is served
@@ -26,10 +28,8 @@ MAX_CHUNKS_PER_SCAN = 15
 
 @st.cache_resource
 def load_backend():
+    from core.analyser import get_analyser_pipeline
     return get_analyser_pipeline()
-
-with st.spinner("Loading AI Compliance Engine..."):
-    vector_store, llm_pipeline = load_backend()
 
 _LOGO_SVG = """<svg width="50" height="58" viewBox="0 0 50 58" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M25 2L3 11v18c0 13 9.5 25 22 28C37.5 54 47 42 47 29V11L25 2z"
@@ -211,6 +211,10 @@ if st.button("Scan for Compliance Risks", type="primary"):
         if len(chunks) > MAX_CHUNKS_PER_SCAN:
             st.warning(f"⚠️ Document is very long. We will scan the first {MAX_CHUNKS_PER_SCAN} substantive paragraphs for now.")
             chunks = chunks[:MAX_CHUNKS_PER_SCAN]
+
+        with st.spinner("Loading AI Compliance Engine..."):
+            from core.analyser import analyse_batch
+            vector_store, llm_pipeline = load_backend()
 
         batches = [chunks[i:i + BATCH_SIZE] for i in range(0, len(chunks), BATCH_SIZE)]
         my_bar = st.progress(0, text=f"Analysing {len(chunks)} paragraphs...")
