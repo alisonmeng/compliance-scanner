@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ClearConsent AI — social preview</title>
+<style>
+  /* Source for assets/social-preview.png (1280×640). Render with headless Chrome:
+     chrome --headless=new --hide-scrollbars --window-size=1280,640 \
+       --screenshot=assets/social-preview.png file://$PWD/assets/social-preview.html */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    background: #0B132B;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    position: relative;
+  }
+  .glow {
+    position: absolute; left: -120px; top: -160px; width: 720px; height: 720px;
+    background: radial-gradient(circle, rgba(0,168,232,0.22) 0%, rgba(0,168,232,0) 62%);
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+  }
+  .left { position: absolute; left: 72px; top: 76px; width: 660px; }
+  .brand { display: flex; align-items: center; gap: 20px; }
+  .brand svg { width: 66px; height: 76px; }
+  .brand h1 { font-size: 54px; font-weight: 700; letter-spacing: -1.2px; }
+  .brand h1 span { color: #00A8E8; }
+  .tagline { margin-top: 38px; font-size: 32px; line-height: 1.28; font-weight: 600; color: #f1f5f9; }
+  .sub { margin-top: 18px; font-size: 21px; line-height: 1.4; color: #00A8E8; font-weight: 500; }
+  .chips { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    font-size: 15px; font-weight: 600; letter-spacing: 0.3px;
+    padding: 7px 14px; border-radius: 999px;
+    border: 1px solid rgba(0,168,232,0.45); background: rgba(0,168,232,0.10); color: #cfeefc;
+  }
+  .footer {
+    position: absolute; left: 72px; bottom: 44px;
+    font-size: 17px; color: #6b7a99; letter-spacing: 0.2px;
+  }
+  .footer b { color: #94a3b8; font-weight: 500; }
+
+  /* Mock violation cards, mirroring ui/app.py's card markup */
+  .cards { position: absolute; right: 72px; top: 92px; width: 430px; height: 470px; }
+  .card {
+    position: absolute; width: 430px;
+    background: #1C2541; border-radius: 10px; overflow: hidden;
+    border: 1px solid #dc2626;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+  }
+  .card.high { border-color: #ea580c; transform: translate(34px, 250px) rotate(-1.2deg); opacity: 0.92; }
+  .card.critical { transform: translate(-10px, 0) rotate(1.4deg); z-index: 2; }
+  .head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 18px; background: rgba(220,38,38,0.18);
+    font-size: 15px; font-weight: 700; letter-spacing: 0.8px; color: #ef4444;
+  }
+  .high .head { background: rgba(234,88,12,0.18); color: #f97316; }
+  .head .law { color: #cbd5e1; font-weight: 600; letter-spacing: 0; font-size: 14px; }
+  .sec { padding: 13px 18px; }
+  .sec + .sec { border-top: 1px solid rgba(255,255,255,0.07); }
+  .sec.cite { background: rgba(0,0,0,0.18); }
+  .label { font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #64748b; margin-bottom: 6px; }
+  .doc { font-size: 15px; line-height: 1.55; color: #d1d5db; }
+  .doc mark { background: rgba(239,68,68,0.28); color: #fff; padding: 0 3px; border-radius: 3px; }
+  .high .doc mark { background: rgba(249,115,22,0.28); }
+  .cite p { font-size: 14px; line-height: 1.6; color: #a0aec0; }
+  .cite p b { color: #e2e8f0; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow"></div>
+
+  <div class="left">
+    <div class="brand">
+      <svg viewBox="0 0 50 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M25 2L3 11v18c0 13 9.5 25 22 28C37.5 54 47 42 47 29V11L25 2z"
+              fill="#00A8E8" fill-opacity="0.14" stroke="#00A8E8" stroke-width="1.8"/>
+        <path d="M17 29l6 6 10-12" stroke="#00A8E8" stroke-width="2.3"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h1>ClearConsent <span>AI</span></h1>
+    </div>
+
+    <p class="tagline">Flag data-rights violations hidden in Terms of Service, Privacy Policies &amp; EULAs.</p>
+    <p class="sub">Every flag backed by a real statute — not a hallucination.</p>
+
+    <div class="chips">
+      <span class="chip">GDPR</span>
+      <span class="chip">Swiss nFADP</span>
+      <span class="chip">EU AI Act</span>
+      <span class="chip">ePrivacy</span>
+      <span class="chip">DSA</span>
+      <span class="chip">UCTD</span>
+      <span class="chip">EU Data Act</span>
+      <span class="chip">CRD</span>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card high">
+      <div class="head"><span>🟠 HIGH</span><span class="law">EU AI Act · Art. 10</span></div>
+      <div class="sec">
+        <div class="label">Your document</div>
+        <p class="doc">“Content you upload <mark>may be used to train and improve our AI models</mark>…”</p>
+      </div>
+    </div>
+
+    <div class="card critical">
+      <div class="head"><span>🚨 CRITICAL</span><span class="law">GDPR · Art. 5(1)(e)</span></div>
+      <div class="sec">
+        <div class="label">Your document</div>
+        <p class="doc">“We may <mark>retain your personal data indefinitely</mark>, including after you close your account.”</p>
+      </div>
+      <div class="sec cite">
+        <div class="label">Legal citation</div>
+        <p><b>Storage limitation</b> — personal data shall be kept for no longer than is necessary for the purposes for which it is processed.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">RAG-powered · Streamlit · LangChain · ChromaDB · Gemini &nbsp;&nbsp;·&nbsp;&nbsp; <b>github.com/alisonmeng/clear-consent</b></div>
+</body>
+</html>

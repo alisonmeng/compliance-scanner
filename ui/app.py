@@ -7,10 +7,13 @@ from html import escape as html_escape
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
 
+from core.meta_tags import inject_meta_tags
+from core.analyser import get_analyser_pipeline, analyse_batch
 # core.analyser pulls in langchain and chromadb, which cost several seconds to
 # import. It is loaded lazily on the first scan so the page can paint immediately.
 # from core.news_agent import check_vendor_history
 
+inject_meta_tags()  # OG/Twitter tags for link previews; must run before the page is served
 st.set_page_config(page_title="ClearConsent AI | Risk Scanner", page_icon="⚖️", layout="wide")
 
 if "scan_count" not in st.session_state:
